@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Fitness Tracker</string>
+    <string name="app_name">Traqueur de Fitness</string>
     <string name="souligne_creer_compte"><u>Créer un compte</u></string>
     <string name="connexion">Connexion</string>
     <string name="mot_de_passe">Mot de passe :</string>
+    <string name="confirmation_mot_de_passe">Confirmation de mot de passe :</string>
+    <string name="creer_compte">Créer compte</string>
+
 
 </resources>
