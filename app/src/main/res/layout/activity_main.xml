@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,20 +10,36 @@
 
     <ImageView
         android:id="@+id/title_image"
-        android:layout_width="333dp"
-        android:layout_height="218dp"
+        android:layout_width="216dp"
+        android:layout_height="139dp"
         android:layout_gravity="center"
-        android:src="@drawable/titre" />
+        android:src="@drawable/bienvenue"
+        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="  Nom d'utilisateur :"
-        android:drawableLeft=""
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
+        android:hint="@string/nom_d_utilisateur"
         android:inputType="textPersonName"
-        android:padding="10dp" />
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/baseline_email_24"  android:hint="  Adresse e-mail :"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="ObsoleteLayoutParam,RtlHardcoded"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -32,33 +47,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextEmail"
         android:layout_marginTop="20dp"
-        android:hint="@string/mot_de_passe"
+        android:drawableStart="@drawable/mdp"  android:hint="@string/mot_de_passe"
         android:inputType="textPassword"
-        android:drawableLeft="@drawable/mdp"
-        android:padding="10dp" />
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="ObsoleteLayoutParam"
+        android:autofillHints="" />
 
-    <Button
-        android:id="@+id/btnConnexion"
-        android:layout_marginTop="50dp"
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/connexion"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:background="@color/vert"
-        />
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/mdp"  android:hint="@string/confirmation_mot_de_passe"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="ObsoleteLayoutParam"
+        android:autofillHints="" />
+
 
     <Button
         android:id="@+id/btnCreation"
-        android:layout_width="174dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:background="@android:color/transparent"
-        android:drawableRight="@drawable/baseline_arrow_forward_24"
-        android:text="@string/souligne_creer_compte"
-        android:layout_gravity="center"
+        android:layout_below="@id/editTextConfirmPassword"
+        android:layout_marginTop="70dp"
+        android:background="@color/vert"
+        android:text="@string/creer_compte"
         android:textColor="@color/black"
-        android:textSize="14sp" />
-
+        android:textSize="18sp"
+        tools:ignore="ObsoleteLayoutParam" />
 
 </LinearLayout>

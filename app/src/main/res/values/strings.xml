@@ -5,6 +5,7 @@
     <string name="mot_de_passe">Mot de passe :</string>
     <string name="confirmation_mot_de_passe">Confirmation de mot de passe :</string>
     <string name="creer_compte">Créer compte</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur :</string>
 
 
 </resources>
