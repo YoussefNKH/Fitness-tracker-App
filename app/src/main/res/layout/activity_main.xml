@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:hint="Adresse e-mail :"
+        android:drawableLeft="@drawable/baseline_email_24"
         android:inputType="textEmailAddress"
         android:padding="10dp" />
 
