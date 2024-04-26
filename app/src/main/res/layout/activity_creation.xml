@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:background="@drawable/bg1"
-    tools:context=".view.MainActivity">
+    tools:context=".view.creation">
 
     <ImageView
         android:id="@+id/title_image"
@@ -23,6 +23,7 @@
         android:layout_marginTop="50dp"
         android:autofillHints=""
         android:hint="@string/nom_d_utilisateur"
+        android:drawableLeft="@drawable/baseline_account_circle_24"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="10dp"
@@ -35,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextUsername"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_email_24"  android:hint="  Adresse e-mail :"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:hint="  Adresse e-mail :"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:padding="10dp"
@@ -61,12 +63,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPassword"
         android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/mdp"  android:hint="@string/confirmation_mot_de_passe"
+        android:drawableStart="@drawable/mdp"
+        android:hint="@string/confirmation_mot_de_passe"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="10dp"
         tools:ignore="ObsoleteLayoutParam"
         android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvMdpsIncorrespondents"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:lineSpacingExtra="8sp"
+        android:padding="10dp"
+        android:text="..."
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 
     <Button
@@ -74,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextConfirmPassword"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:background="@color/vert"
         android:text="@string/creer_compte"
         android:textColor="@color/black"

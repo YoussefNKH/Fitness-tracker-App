@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bg1"
+    tools:context=".view.homepage">
+
+
+    <TextView
+        android:id="@+id/tvTaille"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/taille"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        />
+
+    <EditText
+        android:id="@+id/etTaille"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/cm"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/tvPoids"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/poids"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        />
+
+    <EditText
+        android:id="@+id/etPoids"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:hint="@string/kg"
+        />
+
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+
+        />
+
+    <SeekBar
+        android:id="@+id/sbAge"
+        android:max="120"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/sexe"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sexe"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <RadioButton
+            android:id="@+id/rbHomme"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Homme"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/rbtFemme"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Femme"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvAvtivite"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activite"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <RadioButton
+            android:id="@+id/legerementActif"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Légèrement actif"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/leger"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Léger"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RadioGroup>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/moderementActif"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Modérément actif"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/normal"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Normal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RadioGroup>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/tresActif"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Très actif"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+        <RadioButton
+            android:id="@+id/extraActif"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Extra actif"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConsultation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextConfirmPassword"
+        android:layout_marginTop="20dp"
+        android:background="@color/vert"
+        android:text="@string/consulter"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:ignore="ObsoleteLayoutParam" />
+
+
+</LinearLayout>
