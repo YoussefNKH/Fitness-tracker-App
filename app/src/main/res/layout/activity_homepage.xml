@@ -118,17 +118,19 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-        <RadioButton
-            android:id="@+id/legerementActif"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Légèrement actif"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+        android:orientation="vertical">
+        <LinearLayout  android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"><RadioButton
+        android:id="@+id/legerementActif"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:checked="false"
+        android:text="Légèrement actif"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
         <RadioButton
             android:id="@+id/leger"
             android:layout_width="0dp"
@@ -138,53 +140,58 @@
             android:text="Léger"
             android:textColor="@color/black"
             android:textSize="15sp" />
+    </LinearLayout>
+
+        <LinearLayout  android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/moderementActif"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Modérément actif"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:checked="true"  android:text="Normal"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout  android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tresActif"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Très actif"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/extraActif"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Extra actif"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
     </RadioGroup>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/moderementActif"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Modérément actif"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-        <RadioButton
-            android:id="@+id/normal"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="Normal"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </RadioGroup>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/tresActif"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Très actif"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-        <RadioButton
-            android:id="@+id/extraActif"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Extra actif"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </RadioGroup>
+
 
     <Button
         android:id="@+id/btnConsultation"
