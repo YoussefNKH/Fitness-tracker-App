@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FitnessTracker"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityCreation"
+            android:exported="false" />
+        <activity
             android:name=".view.homepage"
             android:exported="false" />
         <activity

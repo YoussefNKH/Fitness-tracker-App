@@ -4,7 +4,7 @@ public class User {
     private String username;
     private String password ;
     private int age,gender  ;//gender 1=male ; 0=female
-    private float longeur,poids,calories;
+    private float longeur,poids,calories,IMC;
     private String activitys; //les activités que le user faire dans ca journer
     public User(String username,String password,int age,int gender,float longeur,float poids,String activitys){
         this.username=username;
@@ -15,6 +15,7 @@ public class User {
         this.gender=gender;
         this.activitys=activitys;
         this.calories=calculerCalories();
+        this.IMC=calculeIMC();
     }
     public float calculerCalories(){
         float mb;
@@ -48,7 +49,13 @@ public class User {
 
         return mb * pal;
     }
+
     public float getCalories(){return calories;}
+    public float calculeIMC(){
+       float taille=longeur/100; // Convertir la taille en mètres
+        return  poids /(taille*taille);
+    }
 
     }
+
 

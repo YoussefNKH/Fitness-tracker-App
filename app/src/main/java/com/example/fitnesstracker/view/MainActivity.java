@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.fitnesstracker.R;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextUsername;
     private EditText editTextPassword;
     private Button btnConnexion,btnCreation;
+    private TextView tvMdpIncorrect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         editTextUsername=findViewById(R.id.editTextUsername);
         btnConnexion=findViewById(R.id.btnConnexion);
         btnCreation=findViewById(R.id.btnCreation);
+        tvMdpIncorrect=findViewById(R.id.tvMdpIncorrect);
 
     }
 
