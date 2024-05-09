@@ -6,6 +6,7 @@
     android:background="@drawable/bg1"
     tools:context=".view.Result">
 
+
     <ProgressBar
         android:id="@+id/stepCountProgressBar"
         style="?android:attr/progressBarStyleLarge"
