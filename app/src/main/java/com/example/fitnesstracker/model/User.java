@@ -6,7 +6,7 @@ public class User {
     private int age,gender  ;//gender 1=male ; 0=female
     private float longeur,poids,calories;
     private String activitys; //les activités que le user faire dans ca journer
-    public User(String username,String password,int age,int gender,float longeur,float poids,float calories,String activitys){
+    public User(String username,String password,int age,int gender,float longeur,float poids,String activitys){
         this.username=username;
         this.password=password;
         this.age=age;

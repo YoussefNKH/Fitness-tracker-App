@@ -17,6 +17,7 @@
     <string name="calories">Votre besoin des calories par jour :</string>
     <string name="retour">Retour</string>
     <string name="imc">Votre IMC :</string>
+    <string name="voir_nombre_de_pas_par_jour">voir nombre de pas par jour</string>
 
 
 </resources>
