@@ -10,6 +10,8 @@ public class Controller {
         user=new User(username,password,age,gender,longeur,poids,activitys);
     }
     public float getCalResult(){return user.getCalories();}
+    public float getIMCResult(){return  user.calculerIMC();}
+    public String getIMCType(){ return user.interpreterIMC(user.calculerIMC());}
     public static final Controller getInstance(){
         if(null==instance){
             instance=new Controller();
