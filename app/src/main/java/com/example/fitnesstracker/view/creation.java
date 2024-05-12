@@ -29,7 +29,7 @@ public class creation extends AppCompatActivity {
         editTextEmail=findViewById(R.id.editTextEmail);
         editTextConfirmPassword=findViewById(R.id.editTextConfirmPassword);
         btnCreation=findViewById(R.id.btnCreation);
-        tvMdpsIncorrespondents=findViewById(R.id.tvMdpsIncorrespondents);
+
 
     }
 }
