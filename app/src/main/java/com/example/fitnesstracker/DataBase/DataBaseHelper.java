@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+    //fichier d'interaction avec la base de donnée
     private static final String DATABASE_NAME = "fitnesstracker.db";
     private static final int DATABASE_VERSION = 1;
 

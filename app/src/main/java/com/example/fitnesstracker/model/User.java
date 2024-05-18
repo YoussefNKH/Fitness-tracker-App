@@ -1,6 +1,7 @@
 package com.example.fitnesstracker.model;
 
 public class User {
+    //C'est le seul  Model de notre app
     private String username;
     private String password;
     private int age, gender;//gender 1=male ; 0=female

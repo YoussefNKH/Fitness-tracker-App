@@ -14,16 +14,19 @@ import com.example.fitnesstracker.DataBase.DataBaseHelper;
 import com.example.fitnesstracker.R;
 
 public class MainActivity extends AppCompatActivity {
+    //cette une VIEW qui va interacter avec l'utilisateur
+    //voila les attribut qu'on va utiliser pour manipuler cette VIEW
     private EditText editTextUsername;
     private EditText editTextPassword;
     private Button btnConnexion,btnCreation;
-
+    //cette attribut pour travailler avec la base de donnée
     private DataBaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //initialiser les composant XML
         init();
         dbHelper=new DataBaseHelper(this);
         btnConnexion.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 else { Toast.makeText(MainActivity.this, " le username ou le mot de pass invalide ", Toast.LENGTH_SHORT).show();}
             }
         });
+        //
         btnCreation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

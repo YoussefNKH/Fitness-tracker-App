@@ -32,6 +32,7 @@ public class Steps extends AppCompatActivity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps);
         btnGit=findViewById(R.id.btnGit);
+        //button pour allez a la repo dans GitHub
         btnGit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
