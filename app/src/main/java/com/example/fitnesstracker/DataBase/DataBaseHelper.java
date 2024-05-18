@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "fitnesstracker.db";
@@ -16,16 +17,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create the 'users' table
+        Log.d("DataBaseHelper", "Creating database...");
         String createUserTableQuery = "CREATE TABLE users (" +
                 "user_name TEXT PRIMARY KEY," +
                 "email TEXT," +
                 "password TEXT)";
         db.execSQL(createUserTableQuery);
 
-        // Create the 'user_info' table
         String createUserInfoTableQuery = "CREATE TABLE user_info (" +
-                "user_id INTEGER PRIMARY KEY," +
+                "user_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "user_name TEXT," +
                 "age INTEGER," +
                 "gender INTEGER," +
@@ -35,6 +35,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "activity TEXT," +
                 "FOREIGN KEY(user_name) REFERENCES users(user_name))";
         db.execSQL(createUserInfoTableQuery);
+        Log.d("DataBaseHelper", "Database created.");
     }
 
     @Override
@@ -54,6 +55,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put("password", password);
         long result = db.insert("users", null, contentValues);
 
+        Log.d("DataBaseHelper", "insertUserData: " + (result != -1 ? "Success" : "Failed"));
         return result != -1;
     }
 
@@ -69,6 +71,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put("activity", activity);
         long result = db.insert("user_info", null, contentValues);
 
+        Log.d("DataBaseHelper", "insertUserInfoData: " + (result != -1 ? "Success" : "Failed"));
         return result != -1;
     }
 

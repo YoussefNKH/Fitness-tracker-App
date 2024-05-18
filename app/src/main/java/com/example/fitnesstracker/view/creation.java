@@ -25,39 +25,40 @@ public class creation extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_creation);
             init();
-            btnCreation.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String user=editTextUsername.getText().toString();
-                    String pass=editTextPassword.getText().toString();
-                    String repass=editTextConfirmPassword.getText().toString();
-                    String email=editTextEmail.getText().toString();
-                    if(user.equals("")||pass.equals("")||repass.equals(""))
-                        Toast.makeText(creation.this,"Please enter all the fields",Toast.LENGTH_SHORT).show();
-                    else{
-                        if(pass.equals(repass)){
-                            Boolean checkuser = dbHelper.checkUserName(user);
-                            if(checkuser==false){
-                                boolean insert = dbHelper.insertUserData(user,email,pass);
-                                if(insert==true){
-                                    Toast.makeText(creation.this,"Registered successfully",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),homepage.class);
-                                    startActivity(intent);
-                                }else{
-                                    Toast.makeText(creation.this,"Registration failed",Toast.LENGTH_SHORT).show();
+        dbHelper=new DataBaseHelper(this);
+
+               btnCreation.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String user = editTextUsername.getText().toString().trim();
+                        String email = editTextEmail.getText().toString().trim();
+                        String pass = editTextPassword.getText().toString().trim();
+                        String repass = editTextConfirmPassword.getText().toString().trim();
+
+                        if(user.isEmpty() || email.isEmpty() || pass.isEmpty() || repass.isEmpty()) {
+                            Toast.makeText(creation.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                        } else {
+                            if(pass.equals(repass)) {
+                                Boolean checkUser = dbHelper.checkUserName(user);
+                                if(!checkUser) {
+                                    boolean insert = dbHelper.insertUserData(user, email, pass);
+                                    if(insert) {
+                                        Toast.makeText(creation.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), homepage.class);
+                                        intent.putExtra("USERNAME", user);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(creation.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(creation.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
                                 }
+                            } else {
+                                Toast.makeText(creation.this, "Password not matching", Toast.LENGTH_SHORT).show();
                             }
-                            else{
-                                Toast.makeText(creation.this,"User already exists! please sign in",Toast.LENGTH_SHORT).show();
-                            }
-                        }else{
-                            Toast.makeText(creation.this,"Password not matching",Toast.LENGTH_SHORT).show();
                         }
                     }
-                }
-
-
-            });
+                });
 
 
     }

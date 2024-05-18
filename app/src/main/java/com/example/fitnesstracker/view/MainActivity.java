@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 if (dbHelper.checkUserNamePass(username, password)) {
                     Toast.makeText(MainActivity.this, "connexion avec succées :bienvenue "+username, Toast.LENGTH_SHORT).show();
                     // Create an Intent to start HomepageActivity
-                    Intent intent = new Intent(MainActivity.this, homepage.class);
+                   Intent intent = new Intent(MainActivity.this, homepage.class);
 
                     // Pass username and password as extras
                     intent.putExtra("USERNAME", username);

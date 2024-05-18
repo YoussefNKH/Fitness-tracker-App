@@ -27,55 +27,63 @@ public class homepage extends AppCompatActivity {
     private Button btnconsult;
     DataBaseHelper dbHelper;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        Log.d("homepage", "setContentView called");
         init();
-        controller=Controller.getInstance();
-        //convertion des type
-        float taille=Float.parseFloat(etTaille.getText().toString());
-        float poids=Float.parseFloat(etPoids.getText().toString());
-        int age=sbAge.getProgress();
-        int gender=rbHomme.isChecked() ? 1:0;//homme==1 / femme==0
-        String activity=getUserActivity();
+        dbHelper=new DataBaseHelper(this);
+        Log.d("homepage", "init called");
 
-        sbAge.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Log.i("information","on progressChange"+progress);
-                tvAge.setText("Votre age : "+progress);
-            }
+        controller = Controller.getInstance();
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+        // Ensure these fields are not empty before parsing
+        String tailleText = etTaille.getText().toString();
+        String poidsText = etPoids.getText().toString();
+        if (!tailleText.isEmpty() && !poidsText.isEmpty()) {
+            float taille = Float.parseFloat(tailleText);
+            float poids = Float.parseFloat(poidsText);
+            int age = sbAge.getProgress();
+            int gender = rbHomme.isChecked() ? 1 : 0; // homme==1 / femme==0
+            String activity = getUserActivity();
 
-            }
+            sbAge.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    Log.i("homepage", "onProgressChanged: " + progress);
+                    tvAge.setText("Votre age : " + progress);
+                }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {}
 
-            }
-        });
-        btnconsult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = getIntent();
-                String username = intent.getStringExtra("USERNAME");
-                String password = intent.getStringExtra("PASSWORD");
-                controller.createUser(username,password,age,gender,taille,poids,activity);
-                float calResult = controller.getCalResult();
-                //isertion userinformation
-               if (dbHelper.insertUserInfoData(username,age,gender,calResult,taille,poids,activity))
-               {
-                   Toast.makeText(homepage.this, " enregistrement des données avec Succées ", Toast.LENGTH_SHORT).show();}
-               else {
-                   Toast.makeText(homepage.this, " echec d'enregistrement", Toast.LENGTH_SHORT).show();
-               }
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {}
+            });
 
-            }
-        });
+            btnconsult.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = getIntent();
+                    String username = intent.getStringExtra("USERNAME");
+                    String password = intent.getStringExtra("PASSWORD");
+                    controller.createUser(username, password, age, gender, taille, poids, activity);
+                    float calResult = controller.getCalResult();
 
+                    // Insertion user information
+                    if (dbHelper.insertUserInfoData(username, age, gender, calResult, taille, poids, activity)) {
+                        Toast.makeText(homepage.this, "Enregistrement des données avec succès", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(homepage.this, "Échec d'enregistrement", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(this, "Please enter valid values", Toast.LENGTH_SHORT).show();
+        }
     }
+
     private void init(){
         etTaille=findViewById(R.id.etTaille);
         etPoids=findViewById(R.id.etPoids);
