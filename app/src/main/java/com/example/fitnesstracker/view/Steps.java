@@ -1,12 +1,18 @@
 package com.example.fitnesstracker.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import com.example.fitnesstracker.R;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Steps extends AppCompatActivity implements SensorEventListener {
@@ -18,11 +24,21 @@ public class Steps extends AppCompatActivity implements SensorEventListener {
     private int stepCount = 0;
     private float distanceWalked = 0; // in kilometers
     private float caloriesBurned = 0;
+    private Button btnGit;
 
+    @SuppressLint({"SetTextI18n", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps);
+        btnGit=findViewById(R.id.btnGit);
+        btnGit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/YoussefNKH/Fitness-tracker-App"));
+                startActivity(intent);
+            }
+        });
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         stepCountTextView = findViewById(R.id.stepCountTextView);
@@ -36,6 +52,7 @@ public class Steps extends AppCompatActivity implements SensorEventListener {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {

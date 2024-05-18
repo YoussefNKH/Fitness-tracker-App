@@ -60,24 +60,24 @@
         android:textStyle="italic" />
 
     <Button
+        android:id="@+id/btnnbrpas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@color/vert"
+        android:text="Voir nombre de pas"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp"/>
+
+    <Button
         android:id="@+id/btnRetour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextConfirmPassword"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="40dp"
         android:background="@color/vert"
         android:text="@string/retour"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        tools:ignore="ObsoleteLayoutParam" />
-    <Button
-        android:id="@+id/btnnbrpas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextConfirmPassword"
-        android:layout_marginTop="200dp"
-        android:background="@color/vert"
-        android:text="@string/voir_nombre_de_pas_par_jour"
         android:textColor="@color/black"
         android:textSize="18sp"
         tools:ignore="ObsoleteLayoutParam" />

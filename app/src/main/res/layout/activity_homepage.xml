@@ -116,6 +116,7 @@
 
 
     <RadioGroup
+        android:id="@+id/rdg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -161,7 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:checked="true"  android:text="Normal"
+                android:checked="false"  android:text="Normal"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
         </LinearLayout>
